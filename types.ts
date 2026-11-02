@@ -35,6 +35,9 @@ export type Flight = {
   altitude: number | null;
   velocity: number | null;
   heading: number | null;
+  registration?: string | null;
+  aircraftType?: string | null;
+  onGround?: boolean;
 };
 
 export type Vessel = {
@@ -46,6 +49,8 @@ export type Vessel = {
   heading?: number | null;
   destination?: string;
   vesselType?: string;
+  course?: number | null;
+  updatedAt?: number;
 };
 
 export type LayerState = {
