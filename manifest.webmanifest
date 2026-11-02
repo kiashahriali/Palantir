@@ -1,0 +1,12 @@
+{
+  "name": "SHADOWBROKER OSINT",
+  "short_name": "SHADOWBROKER",
+  "description": "Open-source global situational awareness dashboard",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d13",
+  "theme_color": "#080d13",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
