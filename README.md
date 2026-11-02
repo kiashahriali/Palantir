@@ -6,8 +6,8 @@ A mobile-first, open-source intelligence dashboard starter. This repository cont
 
 - **Earthquakes:** live public USGS GeoJSON feed (past 24 hours).
 - **News:** public RSS feeds from BBC, The Guardian, Al Jazeera, DW and NASA. Feed availability and publisher terms vary.
-- **Aircraft:** OpenSky public API. Anonymous access, rate limits, and coverage can vary. Optional credentials may improve access.
-- **Maritime AIS:** not falsely simulated. A reliable unrestricted global AIS feed is not assumed to be free; connect a provider that explicitly permits your intended use.
+- **Aircraft:** ADSB.lol public API (no key). About 60 regional queries are merged every 60 seconds (`adsb.ts`). Coverage depends on community receivers.
+- **Maritime AIS:** AISStream.io over a server-side WebSocket (`ais.ts`). Requires a free `AISSTREAM_API_KEY`. Without it the layer reports `needs credentials` and stays empty; nothing is simulated.
 - **Conflicts / protests:** not mapped as live geolocated events in this initial release. News headlines are not sufficient evidence for a precise event coordinate. A vetted event dataset and geocoding/verification pipeline are required.
 - **NASA FIRMS:** can be integrated using a free MAP_KEY, but registration is required and it is not enabled in this release.
 
@@ -62,7 +62,7 @@ The app includes a manifest, SVG icon, service worker, and offline app-shell fal
 
 This is a functional first release, not a claim that every OSINT capability is complete:
 1. Add a vetted GDELT event adapter and separate conflict/protest classification with source links and confidence.
-2. Add a provider-configurable AIS adapter; do not scrape restricted feeds.
+2. ~~AIS adapter~~ done via AISStream.io (see `ais.ts`).
 3. Add NASA FIRMS adapter after a free MAP_KEY is configured.
 4. Add persistent Postgres storage, user-defined alert rules, deduplication and audit history.
 5. Add automated tests, rate limiting, structured logs, provider health checks, and production deployment configuration.
